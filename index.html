@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Txtalkies | Connect Through Text</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7ff, #eef3ff);
+      color: #1f2937;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      background: #1d4ed8;
+      color: white;
+      padding: 18px 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      padding: 90px 20px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #374151;
+    }
+    .btn {
+      display: inline-block;
+      background: #1d4ed8;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .features {
+      padding: 40px 0 80px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #1d4ed8;
+    }
+    footer {
+      background: #111827;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Txtalkies</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Txtalkies</h1>
+      <p>Connect through meaningful conversations and seamless communication.</p>
+      
+      <a class="btn" href="#">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>Fast</h3>
+          <p>Quick, real-time communication for modern users.</p>
+        </div>
+        <div class="card">
+          <h3>Secure</h3>
+          <p>Your conversations stay protected and private.</p>
+        </div>
+        <div class="card">
+          <h3>Simple</h3>
+          <p>An easy-to-use platform built for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Txtalkies — All rights reserved</p>
+    <p>hello@txtalkies.com</p>
+  </footer>
+</body>
+</html>
