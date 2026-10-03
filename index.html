@@ -1,145 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Txtalkies | Connect Through Text</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f5f7ff, #eef3ff);
-      color: #1f2937;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    header {
-      background: #1d4ed8;
-      color: white;
-      padding: 18px 0;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero {
-      padding: 90px 20px 60px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 22px;
-      margin-bottom: 30px;
-      color: #374151;
-    }
-    .btn {
-      display: inline-block;
-      background: #1d4ed8;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .features {
-      padding: 40px 0 80px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      text-align: center;
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 24px;
-      color: #1d4ed8;
-    }
-    footer {
-      background: #111827;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXAS TALKIES | Next-Gen AI Cinema & Short Films</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#F5C242',
+                            500: '#E5A823',
+                            600: '#C88C15',
+                        },
+                        cinema: {
+                            dark: '#0F0E13',
+                            card: '#18161E',
+                            border: '#2A2735',
+                            cream: '#F3EFE6',
+                            muted: '#A09CA8'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Bebas Neue"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Marquee Glow and Retro Visual Enhancements */
+        body {
+            background-color: #0F0E13;
+            color: #F3EFE6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .marquee-glow {
+            text-shadow: 0 0 20px rgba(245, 194, 66, 0.4), 0 0 40px rgba(229, 168, 35, 0.2);
+        }
+
+        .screen-burn {
+            background: linear-gradient(180deg, rgba(15,14,19,0.2) 0%, rgba(15,14,19,0.85) 75%, rgba(15,14,19,1) 100%),
+                        url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+
+        .film-strip-border {
+            border-image: repeating-linear-gradient(0deg, #F5C242 0, #F5C242 10px, transparent 10px, transparent 20px) 1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0F0E13;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2A2735;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #E5A823;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">Txtalkies</div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="min-h-screen flex flex-col justify-between custom-scrollbar">
 
-  <section class="hero">
-    <div class="container">
-      <h1>Welcome to Txtalkies</h1>
-      <p>Connect through meaningful conversations and seamless communication.</p>
-      
-      <a class="btn" href="#">Get Started</a>
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-cinema-dark/90 backdrop-blur-md border-b border-cinema-border/50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo inspired by image -->
+            <a href="#" onclick="switchTab('home')" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gold-400 rounded flex items-center justify-center text-cinema-dark font-black text-xl shadow-lg shadow-gold-400/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid font-bold fa-star"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display text-2xl sm:text-3xl leading-none text-gold-400 tracking-wider">TEXAS TALKIES</span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-cinema-muted font-bold">AI Cinema Experience</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-cinema-card p-1.5 rounded-full border border-cinema-border">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-gold-400 text-cinema-dark shadow-md">
+                    <i class="fa-solid fa-house mr-1.5"></i> Featured
+                </button>
+                <button onclick="switchTab('education')" id="nav-education" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-cinema-muted hover:text-cinema-cream transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Educational
+                </button>
+                <button onclick="switchTab('entertainment')" id="nav-entertainment" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-cinema-muted hover:text-cinema-cream transition-all">
+                    <i class="fa-solid fa-film mr-1.5"></i> Entertainment
+                </button>
+                <button onclick="switchTab('business')" id="nav-business" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-cinema-muted hover:text-cinema-cream transition-all">
+                    <i class="fa-solid fa-rocket mr-1.5"></i> Business Ideas
+                </button>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleModal('submitModal')" class="hidden sm:flex items-center gap-2 bg-cinema-card border border-gold-400/40 hover:border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-cinema-dark px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">
+                    <i class="fa-solid fa-plus"></i> Submit Pitch
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-cinema-cream p-2 text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cinema-card border-b border-cinema-border px-4 pt-3 pb-6 space-y-2">
+            <button onclick="switchTab('home')" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gold-400 bg-cinema-dark">
+                <i class="fa-solid fa-house mr-2"></i> Home / Featured
+            </button>
+            <button onclick="switchTab('education')" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-cinema-cream hover:bg-cinema-dark">
+                <i class="fa-solid fa-graduation-cap mr-2"></i> Educational Shorts
+            </button>
+            <button onclick="switchTab('entertainment')" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-cinema-cream hover:bg-cinema-dark">
+                <i class="fa-solid fa-film mr-2"></i> Entertainment AI Shorts
+            </button>
+            <button onclick="switchTab('business')" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-cinema-cream hover:bg-cinema-dark">
+                <i class="fa-solid fa-rocket mr-2"></i> Business & Pitch Ideas
+            </button>
+            <button onclick="toggleModal('submitModal')" class="w-full mt-2 bg-gold-400 text-cinema-dark font-bold px-4 py-2.5 rounded-lg text-sm flex items-center justify-center gap-2">
+                <i class="fa-solid fa-plus"></i> Submit Your AI Film
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- ================= HOME / FEATURED VIEW ================= -->
+        <section id="view-home" class="page-view space-y-16">
+            
+            <!-- Hero Spotlight Section (Replica Aesthetic from Image) -->
+            <div class="relative min-h-[85vh] flex items-center justify-center screen-burn px-4 sm:px-6 lg:px-8 border-b border-cinema-border/60">
+                
+                <!-- Drive-in screen background visual element -->
+                <div class="absolute right-4 sm:right-12 bottom-12 hidden lg:block w-[420px] h-[240px] border-4 border-gold-400/30 rounded-lg overflow-hidden shadow-2xl bg-black/60 backdrop-blur transform rotate-1 hover:rotate-0 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Drive in screen marquee" class="w-full h-full object-cover opacity-80">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-black/40">
+                        <p class="font-serif italic text-gold-400 text-lg">A TEXAS LOVE STORY</p>
+                        <i class="fa-solid fa-star text-gold-400 text-xs mt-2"></i>
+                    </div>
+                </div>
+
+                <div class="max-w-5xl w-full mx-auto pt-10 pb-16 relative z-10">
+                    <!-- Film badge details -->
+                    <div class="flex items-center gap-2 text-gold-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">
+                        <span>NEW AI SHORT FILM</span>
+                        <span>•</span>
+                        <span>COMING SOON</span>
+                    </div>
+
+                    <!-- Marquee Giant Title -->
+                    <h1 class="font-display text-6xl sm:text-8xl md:text-9xl text-cinema-cream leading-none tracking-tight mb-6 marquee-glow">
+                        MIDNIGHT AT THE MARQUEE
+                    </h1>
+
+                    <!-- Film Tagline -->
+                    <p class="max-w-2xl text-lg sm:text-xl text-cinema-muted font-light leading-relaxed mb-8">
+                        One last show at a forgotten Texas drive-in. The screen lights up — but nobody remembers buying a ticket.
+                    </p>
+
+                    <!-- Interactive Badges & CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 mb-10">
+                        <button onclick="playFilmTrailer('Midnight at the Marquee', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="bg-gold-400 hover:bg-gold-500 text-cinema-dark font-display text-xl sm:text-2xl px-8 py-3 rounded-full shadow-lg shadow-gold-400/20 flex items-center gap-3 transition-transform hover:scale-105">
+                            <i class="fa-solid fa-play"></i> PREMIERING SOON
+                        </button>
+                        <span class="bg-cinema-card/80 border border-cinema-border text-cinema-cream font-mono text-xs uppercase tracking-wider px-5 py-3.5 rounded-full">
+                            SHORT FILM · 14 MIN
+                        </span>
+                        <button onclick="openCastModal('Midnight at the Marquee')" class="text-cinema-muted hover:text-gold-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 px-3 py-2">
+                            <i class="fa-solid fa-robot text-gold-400"></i> AI Models Used
+                        </button>
+                    </div>
+
+                    <!-- Live Premiere Countdown -->
+                    <div class="inline-flex flex-col bg-cinema-card/90 border border-cinema-border p-4 rounded-2xl">
+                        <span class="text-xs uppercase text-cinema-muted tracking-widest font-semibold mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> Global Digital Premiere In:
+                        </span>
+                        <div class="flex items-center gap-4 text-center font-mono" id="countdown">
+                            <div>
+                                <span class="text-2xl font-bold text-gold-400" id="cd-days">04</span>
+                                <span class="block text-[10px] text-cinema-muted uppercase">Days</span>
+                            </div>
+                            <span class="text-cinema-muted text-xl">:</span>
+                            <div>
+                                <span class="text-2xl font-bold text-gold-400" id="cd-hours">18</span>
+                                <span class="block text-[10px] text-cinema-muted uppercase">Hours</span>
+                            </div>
+                            <span class="text-cinema-muted text-xl">:</span>
+                            <div>
+                                <span class="text-2xl font-bold text-gold-400" id="cd-mins">42</span>
+                                <span class="block text-[10px] text-cinema-muted uppercase">Mins</span>
+                            </div>
+                            <span class="text-cinema-muted text-xl">:</span>
+                            <div>
+                                <span class="text-2xl font-bold text-gold-400" id="cd-secs">09</span>
+                                <span class="block text-[10px] text-cinema-muted uppercase">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Categories Spotlight Overview Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <!-- Search & Global Filter Bar -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-cinema-card p-4 rounded-2xl border border-cinema-border">
+                    <div class="relative w-full sm:w-96">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-cinema-muted"></i>
+                        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search AI films, topics, creators..." class="w-full bg-cinema-dark border border-cinema-border rounded-xl pl-11 pr-4 py-2.5 text-sm text-cinema-cream placeholder-cinema-muted focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-cinema-muted w-full sm:w-auto justify-end">
+                        <span>Showing:</span>
+                        <span class="text-gold-400 uppercase tracking-wider font-bold">All Categories</span>
+                    </div>
+                </div>
+
+                <!-- Showcase: Educational -->
+                <div>
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <h2 class="font-display text-4xl text-cinema-cream tracking-wide">EDUCATIONAL AI SHORTS</h2>
+                            <p class="text-cinema-muted text-sm">Deep dives into history, future tech, ethics & science</p>
+                        </div>
+                        <button onclick="switchTab('education')" class="text-gold-400 hover:underline text-sm font-semibold flex items-center gap-1">
+                            Explore All <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="home-educational-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Showcase: Entertainment -->
+                <div>
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <h2 class="font-display text-4xl text-cinema-cream tracking-wide">ENTERTAINMENT & NARRATIVES</h2>
+                            <p class="text-cinema-muted text-sm">Cinematic Sci-Fi, Dramas & AI-crafted Stories</p>
+                        </div>
+                        <button onclick="switchTab('entertainment')" class="text-gold-400 hover:underline text-sm font-semibold flex items-center gap-1">
+                            Explore All <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="home-entertainment-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Showcase: Entrepreneurship & Business -->
+                <div>
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <h2 class="font-display text-4xl text-cinema-cream tracking-wide">ENTREPRENEURSHIP & PITCHES</h2>
+                            <p class="text-cinema-muted text-sm">Next-gen startups and business models brought to life</p>
+                        </div>
+                        <button onclick="switchTab('business')" class="text-gold-400 hover:underline text-sm font-semibold flex items-center gap-1">
+                            Explore All <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="home-business-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= EDUCATIONAL VIEW ================= -->
+        <section id="view-education" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+            <div class="border-b border-cinema-border pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 text-gold-400 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-book-open"></i> Knowledge & Science
+                    </div>
+                    <h1 class="font-display text-5xl text-cinema-cream">EDUCATIONAL AI CINEMA</h1>
+                    <p class="text-cinema-muted max-w-2xl text-sm">Documentaries, tutorials, and historical recreations generated using Sora, Gen-3, and Claude AI.</p>
+                </div>
+                <!-- Interactive Sub-filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterSubCategory('education', 'all')" class="sub-filter-btn active bg-gold-400 text-cinema-dark px-4 py-1.5 rounded-full text-xs font-bold">All</button>
+                    <button onclick="filterSubCategory('education', 'Tech & AI')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Tech & AI</button>
+                    <button onclick="filterSubCategory('education', 'History')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">History</button>
+                    <button onclick="filterSubCategory('education', 'Science')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Science</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="education-grid">
+                <!-- Cards render here -->
+            </div>
+        </section>
+
+
+        <!-- ================= ENTERTAINMENT VIEW ================= -->
+        <section id="view-entertainment" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+            <div class="border-b border-cinema-border pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 text-gold-400 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-clapperboard"></i> Cinematic Shorts
+                    </div>
+                    <h1 class="font-display text-5xl text-cinema-cream">ENTERTAINMENT & NARRATIVE</h1>
+                    <p class="text-cinema-muted max-w-2xl text-sm">Rich visual storytelling, futuristic sagas, and surreal cinema made with generative media.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterSubCategory('entertainment', 'all')" class="sub-filter-btn active bg-gold-400 text-cinema-dark px-4 py-1.5 rounded-full text-xs font-bold">All</button>
+                    <button onclick="filterSubCategory('entertainment', 'Sci-Fi')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Sci-Fi</button>
+                    <button onclick="filterSubCategory('entertainment', 'Drama')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Drama</button>
+                    <button onclick="filterSubCategory('entertainment', 'Horror')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Horror</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="entertainment-grid">
+                <!-- Cards render here -->
+            </div>
+        </section>
+
+
+        <!-- ================= BUSINESS / ENTREPRENEURSHIP VIEW ================= -->
+        <section id="view-business" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+            <div class="border-b border-cinema-border pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 text-gold-400 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-chart-line"></i> Startup & Innovation
+                    </div>
+                    <h1 class="font-display text-5xl text-cinema-cream">ENTREPRENEURSHIP & PITCH IDEAS</h1>
+                    <p class="text-cinema-muted max-w-2xl text-sm">AI films that pitch future business concepts, unit economics, and automated company breakdowns.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterSubCategory('business', 'all')" class="sub-filter-btn active bg-gold-400 text-cinema-dark px-4 py-1.5 rounded-full text-xs font-bold">All</button>
+                    <button onclick="filterSubCategory('business', 'SaaS & AI')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">SaaS & AI</button>
+                    <button onclick="filterSubCategory('business', 'Hardware')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Hardware</button>
+                    <button onclick="filterSubCategory('business', 'Consumer')" class="sub-filter-btn bg-cinema-card border border-cinema-border text-cinema-muted hover:text-cinema-cream px-4 py-1.5 rounded-full text-xs font-bold">Consumer</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="business-grid">
+                <!-- Cards render here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL 1: TRAILER / MOVIE PLAYER MODAL -->
+    <div id="trailerModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-cinema-card border border-cinema-border rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl relative">
+            <button onclick="closeModal('trailerModal')" class="absolute top-4 right-4 z-10 text-cinema-cream hover:text-gold-400 bg-black/60 rounded-full w-10 h-10 flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="relative aspect-video bg-black">
+                <iframe id="modalIframe" class="w-full h-full" src="" title="Film Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-6">
+                <h3 id="modalFilmTitle" class="font-display text-3xl text-gold-400 mb-2">Film Title</h3>
+                <p id="modalFilmDesc" class="text-cinema-muted text-sm leading-relaxed mb-4">Film description will appear here...</p>
+                <div class="flex items-center justify-between border-t border-cinema-border/60 pt-4 text-xs text-cinema-muted">
+                    <span id="modalFilmMeta">Runtime: 12 min</span>
+                    <button onclick="likeMovie()" class="hover:text-gold-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-red-500"></i> <span id="likeCount">1,420</span> Likes
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section class="features">
-    <div class="container">
-      <div class="grid">
-        <div class="card">
-          <h3>Fast</h3>
-          <p>Quick, real-time communication for modern users.</p>
+    <!-- MODAL 2: BUSINESS MODEL BREAKDOWN DRAWER MODAL -->
+    <div id="businessModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-cinema-card border border-gold-400/30 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeModal('businessModal')" class="absolute top-4 right-4 text-cinema-muted hover:text-gold-400">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase tracking-widest">
+                <i class="fa-solid fa-lightbulb"></i> Business Concept Breakdown
+            </div>
+            <h2 id="bizTitle" class="font-display text-4xl text-cinema-cream">Startup Idea</h2>
+            
+            <div class="space-y-4 text-sm text-cinema-cream/90">
+                <div class="bg-cinema-dark p-4 rounded-xl border border-cinema-border">
+                    <h4 class="font-bold text-gold-400 text-xs uppercase mb-1">Problem Statement</h4>
+                    <p id="bizProblem" class="text-cinema-muted">Description of the market problem.</p>
+                </div>
+                <div class="bg-cinema-dark p-4 rounded-xl border border-cinema-border">
+                    <h4 class="font-bold text-gold-400 text-xs uppercase mb-1">AI Solution & Innovation</h4>
+                    <p id="bizSolution" class="text-cinema-muted">How AI solves this problem scalability wise.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-cinema-dark p-4 rounded-xl border border-cinema-border">
+                        <h4 class="font-bold text-gold-400 text-xs uppercase mb-1">Monetization</h4>
+                        <p id="bizMonetization" class="text-cinema-muted">Subscription SaaS, % transaction.</p>
+                    </div>
+                    <div class="bg-cinema-dark p-4 rounded-xl border border-cinema-border">
+                        <h4 class="font-bold text-gold-400 text-xs uppercase mb-1">TAM (Market Size)</h4>
+                        <p id="bizTam" class="text-cinema-muted">$12.4 Billion worldwide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-2 flex gap-3">
+                <button onclick="alert('Pitch Deck PDF download simulation initialized!')" class="flex-1 bg-gold-400 text-cinema-dark font-bold py-3 rounded-xl hover:bg-gold-500 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i> Download Pitch Deck PDF
+                </button>
+            </div>
         </div>
-        <div class="card">
-          <h3>Secure</h3>
-          <p>Your conversations stay protected and private.</p>
-        </div>
-        <div class="card">
-          <h3>Simple</h3>
-          <p>An easy-to-use platform built for everyone.</p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Txtalkies — All rights reserved</p>
-    <p>hello@txtalkies.com</p>
-  </footer>
+    <!-- MODAL 3: SUBMIT AI FILM / PITCH MODAL -->
+    <div id="submitModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-cinema-card border border-cinema-border rounded-2xl max-w-xl w-full p-6 sm:p-8 relative">
+            <button onclick="closeModal('submitModal')" class="absolute top-4 right-4 text-cinema-muted hover:text-gold-400">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <h3 class="font-display text-4xl text-gold-400">SUBMIT YOUR AI FILM</h3>
+                <p class="text-cinema-muted text-xs">Got an AI short film or business pitch? Feature it on Texas Talkies.</p>
+            </div>
+
+            <form id="submitFilmForm" onsubmit="handleFormSubmit(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-semibold text-cinema-muted mb-1">Film / Pitch Title</label>
+                    <input type="text" required placeholder="e.g. Cybernetic Austin" class="w-full bg-cinema-dark border border-cinema-border rounded-lg px-4 py-2.5 text-cinema-cream focus:border-gold-400 outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-cinema-muted mb-1">Category</label>
+                        <select required class="w-full bg-cinema-dark border border-cinema-border rounded-lg px-3 py-2.5 text-cinema-cream focus:border-gold-400 outline-none">
+                            <option value="education">Educational</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="business">Business / Entrepreneurship</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-cinema-muted mb-1">Primary AI Tools</label>
+                        <input type="text" placeholder="Sora, Midjourney, Gen-3" class="w-full bg-cinema-dark border border-cinema-border rounded-lg px-4 py-2.5 text-cinema-cream focus:border-gold-400 outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-cinema-muted mb-1">Synopsis / Elevator Pitch</label>
+                    <textarea rows="3" required placeholder="Brief description of the story or business idea..." class="w-full bg-cinema-dark border border-cinema-border rounded-lg px-4 py-2.5 text-cinema-cream focus:border-gold-400 outline-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-cinema-muted mb-1">Video Link (YouTube/Vimeo/Drive)</label>
+                    <input type="url" required placeholder="https://..." class="w-full bg-cinema-dark border border-cinema-border rounded-lg px-4 py-2.5 text-cinema-cream focus:border-gold-400 outline-none">
+                </div>
+
+                <div id="submitMessage" class="hidden p-3 rounded-lg bg-green-500/20 text-green-400 text-xs text-center">
+                    🎉 Pitch submitted successfully! Our curators will review it within 24 hours.
+                </div>
+
+                <button type="submit" class="w-full bg-gold-400 hover:bg-gold-500 text-cinema-dark font-bold py-3 rounded-xl transition-all uppercase text-xs tracking-wider">
+                    Submit To Marquee
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 4: AI MODELS / CREATIVE TECH STACK -->
+    <div id="castModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-cinema-card border border-cinema-border rounded-2xl max-w-md w-full p-6 relative">
+            <button onclick="closeModal('castModal')" class="absolute top-4 right-4 text-cinema-muted hover:text-gold-400">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="font-display text-3xl text-gold-400 mb-4">AI CREATIVE STACK</h3>
+            <ul class="space-y-3 text-sm text-cinema-cream">
+                <li class="flex items-center justify-between p-3 bg-cinema-dark rounded-lg">
+                    <span class="font-semibold">Video Generation</span>
+                    <span class="text-xs text-gold-400 font-mono">OpenAI Sora & Runway Gen-3</span>
+                </li>
+                <li class="flex items-center justify-between p-3 bg-cinema-dark rounded-lg">
+                    <span class="font-semibold">Voice & Audio Synthesis</span>
+                    <span class="text-xs text-gold-400 font-mono">ElevenLabs Studio</span>
+                </li>
+                <li class="flex items-center justify-between p-3 bg-cinema-dark rounded-lg">
+                    <span class="font-semibold">Screenplay & Prompting</span>
+                    <span class="text-xs text-gold-400 font-mono">Claude 3.5 Sonnet</span>
+                </li>
+                <li class="flex items-center justify-between p-3 bg-cinema-dark rounded-lg">
+                    <span class="font-semibold">Visual Keyframes</span>
+                    <span class="text-xs text-gold-400 font-mono">Midjourney v6</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- FOOTER Inspired by Image Tagline -->
+    <footer class="bg-cinema-dark border-t border-cinema-border/50 py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-star text-gold-400 text-sm"></i>
+                <span class="font-display text-2xl tracking-widest text-cinema-cream">TEXAS TALKIES</span>
+                <i class="fa-solid fa-star text-gold-400 text-sm"></i>
+            </div>
+            <p class="text-xs text-cinema-muted tracking-wider uppercase">
+                © 2026 TEXAS TALKIES · MADE UNDER THE MARQUEE
+            </p>
+            <div class="flex justify-center gap-6 text-xs text-cinema-muted pt-2">
+                <a href="#" class="hover:text-gold-400 transition-colors">Terms of Premiere</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">AI Ethics Statement</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Creator Network</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Data Registry for AI Movies
+        const MOVIES_DATA = [
+            // Educational
+            {
+                id: 'ed1',
+                title: 'Silicon Prairie: The Microchip Revolution',
+                category: 'education',
+                subCategory: 'History',
+                image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+                duration: '08 MIN',
+                aiTools: 'Sora · Midjourney v6',
+                synopsis: 'An AI-reconstructed history of how Dallas and Austin became semiconductor powerhouses in the 1970s.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 890
+            },
+            {
+                id: 'ed2',
+                title: 'The Quantum Leap: Neural Computing Explained',
+                category: 'education',
+                subCategory: 'Tech & AI',
+                image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
+                duration: '12 MIN',
+                aiTools: 'Runway Gen-3 · Claude 3.5',
+                synopsis: 'Visualizing quantum superposition and neural network weights inside a simulated 3D quantum processor.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 1420
+            },
+            {
+                id: 'ed3',
+                title: 'Neurons & Neon: Synthetic Biology 2050',
+                category: 'education',
+                subCategory: 'Science',
+                image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80',
+                duration: '15 MIN',
+                aiTools: 'Sora · ElevenLabs',
+                synopsis: 'A cinematic science exploration into DNA computing and biomorphing city infrastructure.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 2100
+            },
+
+            // Entertainment
+            {
+                id: 'en1',
+                title: 'Midnight at the Marquee',
+                category: 'entertainment',
+                subCategory: 'Drama',
+                image: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80',
+                duration: '14 MIN',
+                aiTools: 'Sora · ElevenLabs · Midjourney',
+                synopsis: 'One last show at a forgotten Texas drive-in. The screen lights up — but nobody remembers buying a ticket.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 4820
+            },
+            {
+                id: 'en2',
+                title: 'Lone Star Cyberpunk 2099',
+                category: 'entertainment',
+                subCategory: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
+                duration: '18 MIN',
+                aiTools: 'Runway Gen-3 · Stable Diffusion',
+                synopsis: 'Neon dust storms sweep over neo-Houston as a rogue AI marshal uncovers a corporate conspiracy.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 3150
+            },
+            {
+                id: 'en3',
+                title: 'Echoes of Austin: Phantom Frequencies',
+                category: 'entertainment',
+                subCategory: 'Horror',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+                duration: '11 MIN',
+                aiTools: 'Sora · Suno Audio',
+                synopsis: 'A radio host broadcasts late night music in 1982, unaware that the radio tower is tuning into parallel universes.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 1980
+            },
+
+            // Entrepreneurship & Business
+            {
+                id: 'bz1',
+                title: 'Zero-to-Hero AI Factory',
+                category: 'business',
+                subCategory: 'SaaS & AI',
+                image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+                duration: '10 MIN',
+                aiTools: 'Sora · GPT-4o Pitch Visualizer',
+                synopsis: 'Pitching an automated dark micro-factory network managed entirely by autonomous AI agents.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 3400,
+                businessModel: {
+                    problem: 'Traditional manufacturing requires high capital overhead and manual logistics coordination.',
+                    solution: 'AI-orchestrated robotic micro-factories deployed inside shipping containers closer to consumer demand.',
+                    monetization: 'Pay-per-part manufacturing API with subscription reservation tiers.',
+                    tam: '$45.2 Billion Global On-Demand Manufacturing Market'
+                }
+            },
+            {
+                id: 'bz2',
+                title: 'Autonomous Logistics 2030',
+                category: 'business',
+                subCategory: 'Hardware',
+                image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+                duration: '13 MIN',
+                aiTools: 'Runway Gen-3 · Midjourney v6',
+                synopsis: 'A cinematic pitch showing how drone corridors along Texas I-35 eliminate last-mile freight bottlenecks.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 2790,
+                businessModel: {
+                    problem: 'Highway freight congestion causes billions in lost revenue and delivery delays.',
+                    solution: 'Autonomous electric drone freight relay corridors with automated battery swap stations.',
+                    monetization: 'B2B mileage tolling and route optimization subscription.',
+                    tam: '$18.8 Billion Regional Freight Market'
+                }
+            },
+            {
+                id: 'bz3',
+                title: 'The $1M Solopreneur OS',
+                category: 'business',
+                subCategory: 'Consumer',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+                duration: '09 MIN',
+                aiTools: 'Claude 3.5 · Sora',
+                synopsis: 'An interactive pitch deck film showcasing a single founder running a 7-figure media brand using AI teammates.',
+                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                likes: 5120,
+                businessModel: {
+                    problem: 'Solopreneurs burn out trying to manage marketing, sales, content, and customer support alone.',
+                    solution: 'Autonomous AI co-founder suit that executes marketing campaigns and responds to leads 24/7.',
+                    monetization: 'Monthly SaaS seat license starting at $199/month.',
+                    tam: '$8.5 Billion Creator Economy Software Market'
+                }
+            }
+        ];
+
+        
+        // Tab Switcher Logic
+        function switchTab(tabName) {
+            // Hide all pages
+            document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+            
+            // Show target page
+            const targetView = document.getElementById(`view-${tabName}`);
+            if (targetView) targetView.classList.remove('hidden');
+
+            // Update nav button styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-400', 'text-cinema-dark', 'shadow-md');
+                btn.classList.add('text-cinema-muted');
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabName}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-gold-400', 'text-cinema-dark', 'shadow-md');
+                activeBtn.classList.remove('text-cinema-muted');
+            }
+
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+
+            // Scroll top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Card Template Generator
+        function createMovieCard(movie) {
+            const isBusiness = movie.category === 'business';
+            
+            return `
+                <div class="bg-cinema-card border border-cinema-border rounded-2xl overflow-hidden hover:border-gold-400/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <!-- Thumbnail Container -->
+                        <div class="relative aspect-video overflow-hidden bg-cinema-dark">
+                            <img src="${movie.image}" alt="${movie.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-cinema-card via-transparent to-transparent"></div>
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="bg-black/70 backdrop-blur text-gold-400 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-gold-400/30">
+                                    ${movie.subCategory}
+                                </span>
+                            </div>
+                            <span class="absolute bottom-3 right-3 bg-black/80 text-cinema-cream font-mono text-[10px] px-2 py-0.5 rounded">
+                                ${movie.duration}
+                            </span>
+
+                            <!-- Play Overlay Trigger -->
+                            <button onclick="playFilmTrailer('${movie.title}', '${movie.videoUrl}', '${movie.synopsis}', '${movie.duration}', ${movie.likes})" class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-12 h-12 rounded-full bg-gold-400 text-cinema-dark flex items-center justify-center text-xl shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                                    <i class="fa-solid fa-play ml-0.5"></i>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="p-5 space-y-3">
+                            <h3 class="font-display text-2xl text-cinema-cream group-hover:text-gold-400 transition-colors leading-snug">
+                                ${movie.title}
+                            </h3>
+                            <p class="text-cinema-muted text-xs line-clamp-2 leading-relaxed">
+                                ${movie.synopsis}
+                            </p>
+                            <div class="text-[11px] text-gold-400/80 font-mono">
+                                <i class="fa-solid fa-microchip mr-1"></i> ${movie.aiTools}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Action -->
+                    <div class="px-5 pb-5 pt-2 border-t border-cinema-border/50 flex items-center justify-between">
+                        <button onclick="playFilmTrailer('${movie.title}', '${movie.videoUrl}', '${movie.synopsis}', '${movie.duration}', ${movie.likes})" class="text-xs font-bold text-cinema-cream hover:text-gold-400 flex items-center gap-1">
+                            <i class="fa-solid fa-play text-gold-400 text-[10px]"></i> Watch Trailer
+                        </button>
+
+                        ${isBusiness ? `
+                            <button onclick="openBusinessModal('${movie.id}')" class="bg-gold-400/10 hover:bg-gold-400 hover:text-cinema-dark text-gold-400 text-[11px] font-bold px-3 py-1.5 rounded-lg border border-gold-400/30 transition-all flex items-center gap-1">
+                                <i class="fa-solid fa-lightbulb"></i> Business Model
+                            </button>
+                        ` : `
+                            <span class="text-xs text-cinema-muted flex items-center gap-1">
+                                <i class="fa-solid fa-heart text-red-500/80"></i> ${movie.likes}
+                            </span>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render grids
+        function renderGrids() {
+            // Home page grids
+            const eduSection = document.getElementById('home-educational-grid');
+            const entSection = document.getElementById('home-entertainment-grid');
+            const bizSection = document.getElementById('home-business-grid');
+
+            if (eduSection) eduSection.innerHTML = MOVIES_DATA.filter(m => m.category === 'education').slice(0, 3).map(createMovieCard).join('');
+            if (entSection) entSection.innerHTML = MOVIES_DATA.filter(m => m.category === 'entertainment').slice(0, 3).map(createMovieCard).join('');
+            if (bizSection) bizSection.innerHTML = MOVIES_DATA.filter(m => m.category === 'business').slice(0, 3).map(createMovieCard).join('');
+
+            // Full category page grids
+            const eduGrid = document.getElementById('education-grid');
+            const entGrid = document.getElementById('entertainment-grid');
+            const bizGrid = document.getElementById('business-grid');
+
+            if (eduGrid) eduGrid.innerHTML = MOVIES_DATA.filter(m => m.category === 'education').map(createMovieCard).join('');
+            if (entGrid) entGrid.innerHTML = MOVIES_DATA.filter(m => m.category === 'entertainment').map(createMovieCard).join('');
+            if (bizGrid) bizGrid.innerHTML = MOVIES_DATA.filter(m => m.category === 'business').map(createMovieCard).join('');
+        }
+
+        // Subcategory Filtering
+        function filterSubCategory(category, subCat) {
+            const gridId = `${category}-grid`;
+            const gridEl = document.getElementById(gridId);
+            if (!gridEl) return;
+
+            let filtered = MOVIES_DATA.filter(m => m.category === category);
+            if (subCat !== 'all') {
+                filtered = filtered.filter(m => m.subCategory.toLowerCase() === subCat.toLowerCase());
+            }
+
+            gridEl.innerHTML = filtered.map(createMovieCard).join('');
+        }
+
+        // Global Search
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if (!query) {
+                renderGrids();
+                return;
+            }
+
+            const results = MOVIES_DATA.filter(m => 
+                m.title.toLowerCase().includes(query) || 
+                m.synopsis.toLowerCase().includes(query) ||
+                m.aiTools.toLowerCase().includes(query)
+            );
+
+            const eduSection = document.getElementById('home-educational-grid');
+            const entSection = document.getElementById('home-entertainment-grid');
+            const bizSection = document.getElementById('home-business-grid');
+
+            if (eduSection) eduSection.innerHTML = results.filter(m => m.category === 'education').map(createMovieCard).join('') || '<p class="text-cinema-muted text-sm col-span-3">No matching educational films found.</p>';
+            if (entSection) entSection.innerHTML = results.filter(m => m.category === 'entertainment').map(createMovieCard).join('') || '<p class="text-cinema-muted text-sm col-span-3">No matching entertainment films found.</p>';
+            if (bizSection) bizSection.innerHTML = results.filter(m => m.category === 'business').map(createMovieCard).join('') || '<p class="text-cinema-muted text-sm col-span-3">No matching business pitch films found.</p>';
+        }
+
+        // Modal Controllers
+        function playFilmTrailer(title, url, desc = '', duration = '14 MIN', likes = 1200) {
+            document.getElementById('modalFilmTitle').innerText = title;
+            document.getElementById('modalFilmDesc').innerText = desc || 'An exclusive generative AI film created for Texas Talkies premiering soon.';
+            document.getElementById('modalFilmMeta').innerText = `Runtime: ${duration}`;
+            document.getElementById('likeCount').innerText = likes;
+            
+            // Set YouTube iframe embed
+            document.getElementById('modalIframe').src = url + "?autoplay=1";
+            
+            toggleModal('trailerModal');
+        }
+
+        function openBusinessModal(movieId) {
+            const movie = MOVIES_DATA.find(m => m.id === movieId);
+            if (!movie || !movie.businessModel) return;
+
+            document.getElementById('bizTitle').innerText = movie.title;
+            document.getElementById('bizProblem').innerText = movie.businessModel.problem;
+            document.getElementById('bizSolution').innerText = movie.businessModel.solution;
+            document.getElementById('bizMonetization').innerText = movie.businessModel.monetization;
+            document.getElementById('bizTam').innerText = movie.businessModel.tam;
+
+            toggleModal('businessModal');
+        }
+
+        function openCastModal() {
+            toggleModal('castModal');
+        }
+
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.toggle('hidden');
+                
+                // Stop iframe video if closing trailer modal
+                if (modalId === 'trailerModal' && modal.classList.contains('hidden')) {
+                    document.getElementById('modalIframe').src = '';
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                if (modalId === 'trailerModal') {
+                    document.getElementById('modalIframe').src = '';
+                }
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function likeMovie() {
+            const countEl = document.getElementById('likeCount');
+            let current = parseInt(countEl.innerText.replace(',', ''));
+            countEl.innerText = (current + 1).toLocaleString();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('submitMessage');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+                closeModal('submitModal');
+                e.target.reset();
+            }, 2500);
+        }
+
+        // Live Countdown Clock Logic
+        function startCountdown() {
+            let days = 4, hours = 18, mins = 42, secs = 9;
+            setInterval(() => {
+                secs--;
+                if (secs < 0) {
+                    secs = 59;
+                    mins--;
+                    if (mins < 0) {
+                        mins = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                            days--;
+                        }
+                    }
+                }
+                document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').innerText = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').innerText = String(secs).padStart(2, '0');
+            }, 1000);
+        }
+
+        // Initial setup on window load
+        window.onload = function() {
+            renderGrids();
+            startCountdown();
+        };
+    </script>
 </body>
 </html>
